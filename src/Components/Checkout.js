@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import { useStateValue } from "../StateProvider";
 import { useNavigate } from "react-router-dom";
 import { getBasketTotal } from "../reducer";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 
 
 const Checkout = () => {
@@ -35,8 +35,8 @@ const Checkout = () => {
             </h4>
           )}
 
-          {basket?.map((product) => (
-            <Product>
+          {basket?.map((product,index) => (
+            <Product key={index}>
               <Image>
                 <img src={product.image} alt="product" />
               </Image>
@@ -55,7 +55,7 @@ const Checkout = () => {
         </ShoppingCart>
 
         <Subtotal>
-          <CurrencyFormat
+          {/* <CurrencyFormat/> */}
             renderText={(value) => (
               <>
                 <p>
@@ -68,7 +68,7 @@ const Checkout = () => {
             displayType="text"
             thousandSeparator={true}
             prefix={"₹ "}
-          />
+          
 
           <small>
             <input type="checkbox" />

@@ -36,8 +36,8 @@ const Home = () => {
         <Nav>
           <Left>
             {cats &&
-              cats?.data.slice(1, 6).map((c) => (
-                <Link to={`/`} className="link-list">
+              cats?.data.slice(1, 6).map((c,index) => (
+                <Link to={`/`} className="link-list" key={index}>
                   <p>{c.name}</p>
                 </Link>
               ))}
