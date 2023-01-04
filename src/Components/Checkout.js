@@ -55,19 +55,11 @@ const Checkout = () => {
         </ShoppingCart>
 
         <Subtotal>
-          {/* <CurrencyFormat/> */}
-            renderText={(value) => (
-              <>
+        
                 <p>
-                  Subtotal ( {basket.length }items ) : <strong>{value} </strong>
+                  Subtotal ( {basket.length }items ) : <strong> ₹ {getBasketTotal(basket)} </strong>
                 </p>
-              </>
-            )}
-            decimalScale={2}
-            value={getBasketTotal(basket)}
-            displayType="text"
-            thousandSeparator={true}
-            prefix={"₹ "}
+           
           
 
           <small>
