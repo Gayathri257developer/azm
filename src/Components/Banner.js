@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+
 
 const data = [
   "https://rukminim1.flixcart.com/flap/1680/280/image/1defb861e409319b.jpg?q=50",
