@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useStateValue } from "../StateProvider";
 import Navbar from "./Navbar";
-// import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../reducer";
 import { useNavigate } from "react-router-dom";
 import axios from "../axios";
@@ -109,20 +108,10 @@ const Payment = () => {
         </ReviewContainer>
 
         <Subtotal>
-          {/* <CurrencyFormat /> */}
-            renderText={(value) => (
-              <>
-                <p>
-                  Subtotal ( {basket.length} items ) : <strong> {value}</strong>
-                </p>
-              </>
-            )}
-            decimalScale={2}
-            value={getBasketTotal(basket)}
-            displayType="text"
-            thousandSeparator={true}
-            prefix={"₹ "}
         
+                <p>
+                  Subtotal ( {basket.length} items ) : <strong>₹ {getBasketTotal(basket)}</strong>
+                </p>
 
           <button onClick={confirmPayment}>Place Order</button>
         </Subtotal>
